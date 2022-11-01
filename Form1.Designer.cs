@@ -189,7 +189,7 @@ namespace calculator_app
             this.button_multi.TabIndex = 0;
             this.button_multi.Text = "*";
             this.button_multi.UseVisualStyleBackColor = true;
-            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
+            this.button_multi.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_sub
             // 
@@ -200,7 +200,7 @@ namespace calculator_app
             this.button_sub.TabIndex = 0;
             this.button_sub.Text = "-";
             this.button_sub.UseVisualStyleBackColor = true;
-            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
+            this.button_sub.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_add
             // 
@@ -211,7 +211,7 @@ namespace calculator_app
             this.button_add.TabIndex = 0;
             this.button_add.Text = "+";
             this.button_add.UseVisualStyleBackColor = true;
-            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
+            this.button_add.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_eq
             // 
@@ -222,13 +222,14 @@ namespace calculator_app
             this.button_eq.TabIndex = 0;
             this.button_eq.Text = "=";
             this.button_eq.UseVisualStyleBackColor = true;
-            this.button_div.Click += new System.EventHandler(this.button_eq_Click);
+            this.button_eq.Click += new System.EventHandler(this.button_eq_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Courier New", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Font = new System.Drawing.Font("Courier New", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(258, 47);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -240,7 +241,7 @@ namespace calculator_app
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(126, 60);
             this.button_clear.TabIndex = 0;
-            this.button_clear.Text = "AC";
+            this.button_clear.Text = "CE";
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
@@ -268,9 +269,11 @@ namespace calculator_app
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Calculator App";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
