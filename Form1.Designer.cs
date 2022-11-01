@@ -178,6 +178,7 @@ namespace calculator_app
             this.button_div.TabIndex = 0;
             this.button_div.Text = "/";
             this.button_div.UseVisualStyleBackColor = true;
+            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_multi
             // 
@@ -188,6 +189,7 @@ namespace calculator_app
             this.button_multi.TabIndex = 0;
             this.button_multi.Text = "*";
             this.button_multi.UseVisualStyleBackColor = true;
+            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_sub
             // 
@@ -198,6 +200,7 @@ namespace calculator_app
             this.button_sub.TabIndex = 0;
             this.button_sub.Text = "-";
             this.button_sub.UseVisualStyleBackColor = true;
+            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_add
             // 
@@ -208,6 +211,7 @@ namespace calculator_app
             this.button_add.TabIndex = 0;
             this.button_add.Text = "+";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
             // 
             // button_eq
             // 
@@ -218,6 +222,7 @@ namespace calculator_app
             this.button_eq.TabIndex = 0;
             this.button_eq.Text = "=";
             this.button_eq.UseVisualStyleBackColor = true;
+            this.button_div.Click += new System.EventHandler(this.button_eq_Click);
             // 
             // textBox1
             // 
@@ -237,6 +242,7 @@ namespace calculator_app
             this.button_clear.TabIndex = 0;
             this.button_clear.Text = "AC";
             this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
             // Form1
             // 
