@@ -56,6 +56,7 @@ namespace calculator_app
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 60);
             this.button1.TabIndex = 0;
+            this.button1.TabStop = false;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.number_btn_Click);
@@ -67,6 +68,7 @@ namespace calculator_app
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 60);
             this.button2.TabIndex = 0;
+            this.button2.TabStop = false;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.number_btn_Click);
@@ -78,6 +80,7 @@ namespace calculator_app
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 60);
             this.button3.TabIndex = 0;
+            this.button3.TabStop = false;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.number_btn_Click);
@@ -89,6 +92,7 @@ namespace calculator_app
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 60);
             this.button4.TabIndex = 0;
+            this.button4.TabStop = false;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.number_btn_Click);
@@ -100,6 +104,7 @@ namespace calculator_app
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 60);
             this.button5.TabIndex = 0;
+            this.button5.TabStop = false;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.number_btn_Click);
@@ -111,6 +116,7 @@ namespace calculator_app
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 60);
             this.button6.TabIndex = 0;
+            this.button6.TabStop = false;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.number_btn_Click);
@@ -122,6 +128,7 @@ namespace calculator_app
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 60);
             this.button7.TabIndex = 0;
+            this.button7.TabStop = false;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.number_btn_Click);
@@ -133,6 +140,7 @@ namespace calculator_app
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(60, 60);
             this.button8.TabIndex = 0;
+            this.button8.TabStop = false;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.number_btn_Click);
@@ -144,6 +152,7 @@ namespace calculator_app
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(60, 60);
             this.button9.TabIndex = 0;
+            this.button9.TabStop = false;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.number_btn_Click);
@@ -155,6 +164,7 @@ namespace calculator_app
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(126, 60);
             this.button10.TabIndex = 0;
+            this.button10.TabStop = false;
             this.button10.Text = "0";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.number_btn_Click);
@@ -166,6 +176,7 @@ namespace calculator_app
             this.button_comma.Name = "button_comma";
             this.button_comma.Size = new System.Drawing.Size(60, 60);
             this.button_comma.TabIndex = 0;
+            this.button_comma.TabStop = false;
             this.button_comma.Text = ",";
             this.button_comma.UseVisualStyleBackColor = true;
             // 
@@ -176,6 +187,7 @@ namespace calculator_app
             this.button_div.Name = "button_div";
             this.button_div.Size = new System.Drawing.Size(60, 60);
             this.button_div.TabIndex = 0;
+            this.button_div.TabStop = false;
             this.button_div.Text = "/";
             this.button_div.UseVisualStyleBackColor = true;
             this.button_div.Click += new System.EventHandler(this.operation_btn_Click);
@@ -187,6 +199,7 @@ namespace calculator_app
             this.button_multi.Name = "button_multi";
             this.button_multi.Size = new System.Drawing.Size(60, 60);
             this.button_multi.TabIndex = 0;
+            this.button_multi.TabStop = false;
             this.button_multi.Text = "*";
             this.button_multi.UseVisualStyleBackColor = true;
             this.button_multi.Click += new System.EventHandler(this.operation_btn_Click);
@@ -198,6 +211,7 @@ namespace calculator_app
             this.button_sub.Name = "button_sub";
             this.button_sub.Size = new System.Drawing.Size(60, 60);
             this.button_sub.TabIndex = 0;
+            this.button_sub.TabStop = false;
             this.button_sub.Text = "-";
             this.button_sub.UseVisualStyleBackColor = true;
             this.button_sub.Click += new System.EventHandler(this.operation_btn_Click);
@@ -209,6 +223,7 @@ namespace calculator_app
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(60, 60);
             this.button_add.TabIndex = 0;
+            this.button_add.TabStop = false;
             this.button_add.Text = "+";
             this.button_add.UseVisualStyleBackColor = true;
             this.button_add.Click += new System.EventHandler(this.operation_btn_Click);
@@ -220,6 +235,7 @@ namespace calculator_app
             this.button_eq.Name = "button_eq";
             this.button_eq.Size = new System.Drawing.Size(126, 60);
             this.button_eq.TabIndex = 0;
+            this.button_eq.TabStop = false;
             this.button_eq.Text = "=";
             this.button_eq.UseVisualStyleBackColor = true;
             this.button_eq.Click += new System.EventHandler(this.button_eq_Click);
@@ -241,6 +257,7 @@ namespace calculator_app
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(126, 60);
             this.button_clear.TabIndex = 0;
+            this.button_clear.TabStop = false;
             this.button_clear.Text = "CE";
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);

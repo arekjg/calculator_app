@@ -59,6 +59,7 @@ namespace calculator_app
         {
             textBox1.Text = textBox1.Text + (sender as Button).Text;
             current_number = (Set_current_number(Get_current_number(current_number) + (sender as Button).Text));
+            this.ActiveControl = button_eq;
         }
 
 
@@ -68,6 +69,7 @@ namespace calculator_app
             current_number = 0;
             textBox1.Text = textBox1.Text + (sender as Button).Text;
             operation = (sender as Button).Text;
+            this.ActiveControl = button_eq;
         }
         private void button_eq_Click(object sender, EventArgs e)
         {
@@ -76,12 +78,14 @@ namespace calculator_app
             result = calc(first_number, second_number, operation);
             textBox1.Text = result.ToString();
             operation = "";
+            this.ActiveControl = button_eq;
         }
 
         private void button_clear_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
             current_number = 0;
+            this.ActiveControl = button_eq;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
