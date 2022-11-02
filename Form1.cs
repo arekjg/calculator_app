@@ -17,18 +17,37 @@ namespace calculator_app
             InitializeComponent();
         }
 
-        private int first_number { get; set; }
-        private int second_number { get; set; }
+        private double first_number { get; set; }
+        private double second_number { get; set; }
         private string operation { get; set; }
-        private int result { get; set; }
+        private double result { get; set; }
 
-        private int calc(int first, int second, string op)
+        private double current_number = 0;
+        public string Get_current_number(double number)
         {
-            int calculation_result = 0;
+            return number.ToString();
+        }
+        public double Set_current_number(string number)
+        {
+            return Double.Parse(number);
+        }
+
+        private double calc(double first, double second, string op)
+        {
+            double calculation_result = 0;
             switch (op)
             {
                 case "/":
-                    calculation_result = first / second;
+                    try
+                    {
+                        calculation_result = first / second;
+                    }
+                    catch (DivideByZeroException)
+                    {
+                        current_number = 0;
+                        textBox1.Text = "0 division";
+                        this.ActiveControl = button_eq;
+                    }
                     break;
                 case "*":
                     calculation_result = first * second;
@@ -45,23 +64,20 @@ namespace calculator_app
             return calculation_result;
         }
 
-        private int current_number = 0;
-        public string Get_current_number(int number)
-        {
-            return number.ToString();
-        }
-        public int Set_current_number(string number)
-        {
-            return Int32.Parse(number);
-        }
-
         private void number_btn_Click(object sender, EventArgs e)
         {
+            // DOES NOT WORK WITH DOUBLES
             textBox1.Text = textBox1.Text + (sender as Button).Text;
-            current_number = (Set_current_number(Get_current_number(current_number) + (sender as Button).Text));
+            if (textBox1.Text[textBox1.Text.Length - 1] == '.')
+            {
+                current_number = (Set_current_number(Get_current_number(current_number) + "," + (sender as Button).Text));
+            }
+            else
+            {
+                current_number = (Set_current_number(Get_current_number(current_number) + (sender as Button).Text));
+            }
             this.ActiveControl = button_eq;
         }
-
 
         private void operation_btn_Click(object sender, EventArgs e)
         {
@@ -76,7 +92,10 @@ namespace calculator_app
             second_number = current_number;
             current_number = 0;
             result = calc(first_number, second_number, operation);
-            textBox1.Text = result.ToString();
+            if (textBox1.Text != "0 division")
+            {
+                textBox1.Text = result.ToString().Replace(',', '.');
+            }
             operation = "";
             this.ActiveControl = button_eq;
         }
@@ -85,6 +104,13 @@ namespace calculator_app
         {
             textBox1.Text = "";
             current_number = 0;
+            this.ActiveControl = button_eq;
+        }
+
+        private void button_comma_Click(object sender, EventArgs e)
+        {
+            // EVENT HANDLER TO FINISH
+            textBox1.Text = textBox1.Text + '.';
             this.ActiveControl = button_eq;
         }
 
@@ -140,9 +166,9 @@ namespace calculator_app
                 case Keys.Delete:
                     button_clear.PerformClick();
                     break;
-                //case Keys.Oemcomma:
-                //    button1.PerformClick();
-                //    break;
+                case Keys.Decimal:
+                    button_comma.PerformClick();
+                    break;
                 default:
                     break;
             }
@@ -151,8 +177,10 @@ namespace calculator_app
 }
 
 // TODO:
-// fix comma key event
 // add comma button event
-// check and debug calculations
-// add commas
-// handle exeptions (zero division)
+// check and debug calculations (next operation, next operation after calculating)
+
+// DONE:
+// fixed comma key event
+// handled exeptions (zero division)
+// set comma to display as dot in textBox

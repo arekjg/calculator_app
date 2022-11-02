@@ -177,8 +177,9 @@ namespace calculator_app
             this.button_comma.Size = new System.Drawing.Size(60, 60);
             this.button_comma.TabIndex = 0;
             this.button_comma.TabStop = false;
-            this.button_comma.Text = ",";
+            this.button_comma.Text = ".";
             this.button_comma.UseVisualStyleBackColor = true;
+            this.button_comma.Click += new System.EventHandler(this.button_comma_Click);
             // 
             // button_div
             // 
