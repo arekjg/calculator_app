@@ -39,12 +39,6 @@ namespace calculator_app
             {
                 case "/":
                     calculation_result = first / second;
-                    if (Double.IsInfinity(calculation_result))
-                    {
-                        current_number = 0;
-                        textBox1.Text = "0 division";
-                        this.ActiveControl = button_eq;
-                    }
                     break;
                 case "*":
                     calculation_result = first * second;
@@ -89,6 +83,15 @@ namespace calculator_app
         {
             second_number = current_number;
             result = calc(first_number, second_number, operation);
+            // handle zero division
+            if (Double.IsInfinity(result) || Double.IsNaN(result))
+            {
+                textBox1.Text = "0 division!";
+            }
+            else
+            {
+                textBox1.Text = result.ToString().Replace(',', '.');
+            }
             current_number = result;
             operation = "";
             this.ActiveControl = button_eq;
@@ -173,8 +176,4 @@ namespace calculator_app
 // TODO:
 // add comma button event
 // check and debug calculations (next operation, next operation after calculating)
-
-// DONE:
-// fixed comma key event
-// handled exeptions (zero division)
-// set comma to display as dot in textBox
+// add changing operation if calculation was not executed
