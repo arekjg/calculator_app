@@ -38,11 +38,8 @@ namespace calculator_app
             switch (op)
             {
                 case "/":
-                    try
-                    {
-                        calculation_result = first / second;
-                    }
-                    catch (DivideByZeroException)
+                    calculation_result = first / second;
+                    if (Double.IsInfinity(calculation_result))
                     {
                         current_number = 0;
                         textBox1.Text = "0 division";
@@ -87,15 +84,12 @@ namespace calculator_app
             operation = (sender as Button).Text;
             this.ActiveControl = button_eq;
         }
+        
         private void button_eq_Click(object sender, EventArgs e)
         {
             second_number = current_number;
-            current_number = 0;
             result = calc(first_number, second_number, operation);
-            if (textBox1.Text != "0 division")
-            {
-                textBox1.Text = result.ToString().Replace(',', '.');
-            }
+            current_number = result;
             operation = "";
             this.ActiveControl = button_eq;
         }
