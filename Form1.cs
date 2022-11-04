@@ -72,6 +72,12 @@ namespace calculator_app
 
         private void operation_btn_Click(object sender, EventArgs e)
         {
+            // if there is no first number
+            if (textBox1.Text.Length < 1)
+            {
+                return;
+            }
+            // if there is already an operator
             char last_char = textBox1.Text[textBox1.Text.Length - 1];
             if ((last_char == '/') || (last_char == '*') || (last_char == '-') || (last_char == '+'))
             {
@@ -182,6 +188,4 @@ namespace calculator_app
 }
 
 // TODO:
-// add comma button event
-// check and debug calculations (next operation, next operation after calculating)
-// catch exception when user clicks operator first instead of a number
+// fix inserting commas
