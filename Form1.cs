@@ -21,12 +21,12 @@ namespace calculator_app
         private double second_number { get; set; }
         private string operation { get; set; }
         private double result { get; set; }
-
         private double current_number = 0;
         public string Get_current_number(double number)
         {
             return number.ToString();
         }
+
         public double Set_current_number(string number)
         {
             return Double.Parse(number);
@@ -57,9 +57,14 @@ namespace calculator_app
 
         private void number_btn_Click(object sender, EventArgs e)
         {
-            // DOES NOT WORK WITH DOUBLES
             textBox1.Text = textBox1.Text + (sender as Button).Text;
-            if (textBox1.Text[textBox1.Text.Length - 1] == '.')
+            // if there is only 1 number
+            if (textBox1.Text.Length < 2)
+            {
+                current_number = (Set_current_number(Get_current_number(current_number) + (sender as Button).Text));
+            }
+            // if the user types a comma
+            else if (textBox1.Text[textBox1.Text.Length - 2] == '.')
             {
                 current_number = (Set_current_number(Get_current_number(current_number) + "," + (sender as Button).Text));
             }
@@ -120,7 +125,6 @@ namespace calculator_app
 
         private void button_comma_Click(object sender, EventArgs e)
         {
-            // EVENT HANDLER TO FINISH
             textBox1.Text = textBox1.Text + '.';
             this.ActiveControl = button_eq;
         }
@@ -186,6 +190,3 @@ namespace calculator_app
         }
     }
 }
-
-// TODO:
-// fix inserting commas
