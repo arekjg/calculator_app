@@ -72,8 +72,16 @@ namespace calculator_app
 
         private void operation_btn_Click(object sender, EventArgs e)
         {
-            first_number = current_number;
-            current_number = 0;
+            char last_char = textBox1.Text[textBox1.Text.Length - 1];
+            if ((last_char == '/') || (last_char == '*') || (last_char == '-') || (last_char == '+'))
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            }
+            else
+            {
+                first_number = current_number;
+                current_number = 0;
+            }
             textBox1.Text = textBox1.Text + (sender as Button).Text;
             operation = (sender as Button).Text;
             this.ActiveControl = button_eq;
@@ -176,4 +184,4 @@ namespace calculator_app
 // TODO:
 // add comma button event
 // check and debug calculations (next operation, next operation after calculating)
-// add changing operation if calculation was not executed
+// catch exception when user clicks operator first instead of a number
