@@ -1,3 +1,4 @@
 # Calculator App
 
-My first attempt in making working calculator with C# and Windows Forms framework.
+This is a simple calculator app written in C# with Windows Forms .NET framework.  
+It does simple operations: addition, substraction, division and multiplication.
